@@ -1,0 +1,86 @@
+.especialidades-body {
+    background-image: url(https://img.freepik.com/fotos-premium/anillo-boxeo-redondo-jaula-vacia-luz-reflectores-boxeo-kickboxing-artes-marciales-mixtas-mma_974629-26110.jpg?w=740);
+    background-size: cover;
+    background-position: center;
+    box-shadow: inset 0 0 0 2000px rgba(17, 17, 17, 0.7);
+    color: rgb(255, 255, 255);
+}
+
+.especialidades_lista h2 {
+    text-transform: uppercase; 
+    font-family: 'Copperplate', 'Copperplate Gothic', sans-serif; 
+    font-weight: bold;
+    color: rgb(247, 243, 10);
+    margin-bottom: 2em;
+    text-align: center;
+}
+
+.especialidades_imagen h3 {
+    text-transform: uppercase; 
+    font-family: 'Copperplate', 'Copperplate Gothic', sans-serif;
+    font-weight: bold;
+    color: rgb(245, 241, 7);
+}
+
+img {
+    border-radius: 25px;
+}
+
+.image-container {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    margin-bottom: 20px;
+    border: 2px solid #ddd;
+    border-radius: 10px;
+}
+
+.main-image {
+    display: block;
+    width: 100%;
+    height: auto;
+    transition: opacity 0.3s ease;
+    border-radius: 10px;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    border-radius: 10px;
+}
+
+.overlay-content {
+    color: white;
+}
+
+.overlay-image {
+    width: 100px;
+    height: auto;
+    margin-bottom: 10px;
+    background: transparent;
+}
+
+.image-container:hover .overlay {
+    opacity: 1;
+}
+
+.image-container:hover .main-image {
+    opacity: 0.3;
+}
+
+.especialidades_lista a {
+    text-align: center;
+    display: block;
+}
+    
+

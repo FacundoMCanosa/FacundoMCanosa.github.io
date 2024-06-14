@@ -1,0 +1,280 @@
+/* Estilos generales para todo el sitio */
+header {
+    background: linear-gradient(135deg, #3498db, #2c3e50); /* Degradado lineal de azul a negro */
+    color: rgb(241, 238, 8); /* Color de texto */
+    width: 100%;
+    padding: 20px 0; /* Establece un relleno interior de 20 píxeles alrededor del contenido dentro del <header> */
+    position: sticky; /* Hace que el header sea "pegajoso" */
+    top: 0; /* El encabezado se pegará en la parte superior de la ventana */
+    z-index: 1000; /* Asegura que el encabezado esté por encima de otros elementos */
+    display: flex;
+    flex-direction: row; /* especifica la dirección principal en la que los elementos secundarios del cuerpo se colocan dentro del flujo de contenido */
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+#titulo_pagina{
+    padding-left: 0.5em;
+    text-transform: uppercase;
+    font-family: 'Copperplate', 'Copperplate Gothic', sans-serif;
+    font-size: 1.6em
+}
+
+
+ul{
+
+    display: flex; /* establece el modelo de caja flexible en el cuerpo del documento */
+    flex-direction: row; /* especifica la dirección principal en la que los elementos secundarios del cuerpo se colocan dentro del flujo de contenido */
+    flex-wrap: wrap;
+    list-style: none;
+    padding: 0; /* Elimina el relleno predeterminado */
+    margin: 0; /* Elimina el margen predeterminado */
+      
+}
+
+
+header nav ul li {
+    margin-left: 1em; /* Establece un margen izquierdo de 2em entre cada elemento de lista */
+    padding: 0.5em; /* Establece un relleno interior de 1em en cada elemento de lista */
+    border-radius: 15px;
+    
+}
+
+header nav ul li a {
+    text-decoration: none; /* Elimina la decoración de texto predeterminada de los enlaces */
+    text-transform: uppercase; /* Convierte el texto a mayúsculas */
+    font-weight: bold;
+    color: white;
+}
+
+header li:hover {
+    background-color: rgba(216, 215, 215, 0.2); /* Transparencia del 20% */
+    transition: 0.5s; /* Agrega una transición suave de 0.5 segundos al cambio de color de fondo */
+}
+
+.abrir, .cerrar{ 
+    display: none;
+}
+
+.abrir {
+    background: url('./imagenes/klipartz.com.png') no-repeat;
+    background-size: contain; /* Ajusta la imagen al tamaño del botón */
+    background-position: center; /* Centra la imagen dentro del botón */
+    border: none;
+    cursor: pointer;
+    width: 100px;
+    height: 50px;
+    padding: 0; /* Elimina cualquier relleno del botón */
+}
+
+/* Estilo para el botón "cerrar" */
+.cerrar {
+    background: url('./imagenes/klipartz.com.png') no-repeat;
+    background-size: contain; /* Ajusta la imagen al tamaño del botón */
+    background-position: center; /* Centra la imagen dentro del botón */
+    border: none;
+    cursor: pointer;
+    width: 100px;
+    height: 50px;
+    padding: 0; /* Elimina cualquier relleno del botón */
+}
+
+@media screen and (max-width: 800px) {
+
+    .abrir, .cerrar{
+        display:block;     
+    }
+
+    .abrir{
+        margin-left: 20px !important; /* Espacio desde el borde izquierdo */
+        margin-right: 0 !important;   /* Asegura que no haya espacio extra en el lado derecho */
+
+    }
+
+    .topnav {
+        opacity: 0;
+        visibility: hidden;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        background: rgba(0, 0, 0, 0.9);
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 1000;
+        transition: opacity 0.3s ease, visibility 0.3s ease;
+    }
+
+    .topnav.visible {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    .nav-list {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        
+    }
+
+    .nav-list  li{
+        padding: 1em 0;
+        margin: 0.5em 0;
+    }
+
+    ul .enlace{
+        color: rgb(253, 253, 253);
+    }
+
+    h1{
+       
+        font-size: 1em !important;
+    }
+
+}
+
+@media screen and (max-height: 600px) {
+    .nav-list {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    .nav-list li {
+        padding: 0.5em;
+        margin: 0.5em;
+    }
+
+    .topnav {
+        height: auto;
+    }
+}
+
+body {
+    background: linear-gradient(to bottom, #f0f0f0, #808080); /* Degradado de grises */
+    font-family: Arial, sans-serif; /* Fuente de texto */
+    margin: 0; /* Elimina márgenes predeterminados */
+    padding: 0; /* Elimina relleno predeterminado */
+    display: flex; /* establece el modelo de caja flexible en el cuerpo del documento */
+    flex-direction: column; /* especifica la dirección principal en la que los elementos secundarios del cuerpo se colocan dentro del flujo de contenido */
+    min-height: 100vh; /* Establece la altura mínima del cuerpo para ocupar toda la ventana */
+}
+
+main {
+  
+    flex: 1; /* Crece para ocupar todo el espacio disponible */
+    padding: 20px;
+}
+
+
+p::selection{background-color: rgb(8, 114, 40);}
+
+h1::selection{background-color: rgb(8, 114, 40);}
+
+
+h2::selection{background-color: rgb(8, 114, 40);}
+
+h3::selection{background-color: rgb(8, 114, 40);}
+
+ul li::selection{background-color: rgb(8, 114, 40);}
+
+
+footer {
+    background: linear-gradient(to bottom, #3498db, #2c3e50); /* Degradado de azul a negro */
+    color: white;
+    padding-top: 1em;
+    text-align: center; /* Centra el texto en el footer */
+    width: 100%;
+    bottom: 0;
+    margin-top: 20px; /* Añade un margen superior para separar del main */
+    position: relative; /* Permite que el footer se posicione normalmente en el flujo del documento */
+
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1em;
+}
+
+.left img, .right img {
+    width: 65px;
+}
+
+.center {
+    text-align: center;
+}
+
+.right img {
+    width: 65px;
+    transition: opacity 1s ease-in-out;
+    opacity: 1;
+}
+
+.right img:hover {
+    opacity: 0.5;
+}
+
+.bolsa{
+    
+    animation-name: rotacion; /*nombre de la animacion */
+    animation-iteration-count: infinite; /*cantidad de veces que se repita la animacion */
+    animation-duration: 2s;/*duracion de la animacion */
+}
+
+@keyframes rotacion {
+    from {
+        transform: rotateY(0deg);
+    }
+
+    to {
+        transform: rotateY(360deg);
+    }
+}
+
+.belt img {
+    width: 65px;
+    
+    /* transform: translateX(-1000%); */
+    transition: opacity 1s ease-in-out; /*Aplica una transición de opacidad de 1 segundo con una curva de velocidad Lento-Normal-Lento*/
+    opacity: 1;/*la imagen es visible */
+}
+
+.belt img:hover {
+    opacity: 0.5; /*al acercar el cursor la imagen se vuelve semi-transparente */
+}
+
+.social-icons {
+    flex-direction: column;
+    gap: 10px;
+}
+
+.social-icons .icon img {
+    width: 30px;
+    height: 30px;
+    transition: opacity 0.3s ease; /* Transición suave */
+}
+
+.social-icons .icon:hover img {
+    opacity: 0.3; /* Aumenta la opacidad al pasar el cursor */
+}
+
+footer p {
+    margin-top: 10px;
+    color: white;
+}
+
+@media (max-width: 600px) {
+    .footer-content {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+

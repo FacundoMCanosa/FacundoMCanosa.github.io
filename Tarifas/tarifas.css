@@ -1,0 +1,57 @@
+.aclaracion {
+    padding: 1rem;
+    background-color: #f0f0f0;
+    margin: 1rem 0;
+    text-align: center;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    padding: 1rem;
+}
+
+.course {
+    background-color: #ffffff;
+    padding: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.course h2 {
+    margin-top: 0;
+}
+
+.course p {
+    margin: 0.5rem 0;
+}
+
+.course button {
+    display: block;
+    width: 100%;
+    padding: 0.5rem;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.course button:hover {
+    background-color: #0056b3;
+}
+
+.full-width {
+    grid-column: span 2;
+}
+
+@media (max-width: 768px) {
+    .grid-container {
+        grid-template-columns: 1fr;
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        box-sizing: border-box;
+    }
+}

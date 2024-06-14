@@ -1,0 +1,108 @@
+.index-body {
+    background-image: url(https://img.freepik.com/fotos-premium/arena-boxeo-vacia-competiciones-artes-marciales-mixtas-mma_974629-26290.jpg?w=740);
+    background-size: cover;
+    background-position: center;
+    box-shadow: inset 0 0 0 2000px rgba(17, 17, 17, 0.7);
+    color: rgb(255, 255, 255);
+
+}
+
+section {
+    margin-bottom: 2em;
+}
+
+.carousel-item img {
+    height: 40em;
+    width: auto;
+}
+
+#carouselExampleIndicators {
+    margin-bottom: 2em; /* Puedes ajustar el valor según la separación que desees */
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 20px;
+}
+
+.grid-item {
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    border-radius: 10px;
+    justify-content: center;
+    align-items: center;
+    text-align: justify;
+}
+
+.grid-item-video {
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.grid-full {
+    grid-column: span 2;
+    text-align: center;
+}
+
+@media (max-width: 800px) {
+    .grid-container {
+        grid-template-columns: 1fr;
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+}
+
+.video {
+    display: flex;
+}
+
+@media (max-width:400px) {
+    .video {
+        width: 150px;
+    }
+}
+
+
+.section-heading {
+    text-transform: uppercase;
+    font-family: 'Copperplate', 'Copperplate Gothic', sans-serif;
+    font-weight: bold;
+    color: rgb(230, 245, 16);
+    
+
+}
+
+section ul {
+    list-style: circle;
+    /* Elimina los marcadores de lista predeterminados */
+    display:inline-block;
+    margin-left: 0;
+    padding: 0;
+    text-align: left; /* Asegurar que los ítems estén alineados a la izquierda */
+    display: inline-block; /* Permitir centrado */
+}
+
+.paragraph-container {
+
+    text-align: justify;
+    width: 100%;
+    max-width: 100%;
+    font-size: 1.5em;
+    width: 30em;
+    
+}
+
+.specialties-list li {
+    margin-bottom: 1em;
+    font-size: 1.5em;
+    width: 100;
+}
+
+
+
+    
