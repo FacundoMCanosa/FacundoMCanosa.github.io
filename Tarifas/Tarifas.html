@@ -8,73 +8,76 @@
     <link rel="stylesheet" href="../estilos-generales.css">
     <link rel="stylesheet" href="./tarifas.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-
-    
-    <link rel="icon"
-        href="./imagenes/png-clipart-wwe-championship-world-heavyweight-championship-championship-belt-professional-wrestling-championship-boxing-professional-wrestling-gold.ico">
-
+    <link rel="icon" href="./imagenes/png-clipart-wwe-championship-world-heavyweight-championship-championship-belt-professional-wrestling-championship-boxing-professional-wrestling-gold.ico">
 </head>
 
 <body class="index-body">
-
     <header>
        
     </header>
 
-    <main>
+    <main id="app">
         <p class="aclaracion">Aclaración<br>Recuerde que para agregar al carrito cualquiera de los cursos, previamente debe haberse inscripto en el formulario de inscripción, de lo contrario el sistema no le permitirá matricularse.</p>
         
         <div class="grid-container">
-            <div class="course">
+            <div class="course" data-course="Jiu-Jitsu Brasileño" data-price="16000">
                 <h2>Jiu-Jitsu Brasileño:</h2>
                 <p>Duración del curso completo: 2 meses</p>
                 <p>Días: Lunes, Miércoles, Viernes</p>
                 <p>Horario: 18:00 - 20:00</p>
                 <p>Profesor: Prof. Juan Pérez</p>
-                <p>Valor de la matrícula de inscripción: Xxxxxxxx $</p>
-                <p>Valor de las cuotas mensuales: Xxxxxxx $</p>
-                <button>Quiero matricularme</button>
+                <p>Valor de la matrícula de inscripción: 2000 $</p>
+                <p>Valor de las cuotas mensuales: 7000 $</p>
+                <button class="btn btn-primary add-to-cart">Quiero matricularme</button>
             </div>
-            <div class="course">
+            <div class="course" data-course="Muay Thai" data-price="10000">
                 <h2>Muay Thai:</h2>
                 <p>Duración del curso completo: 4 meses</p>
                 <p>Días: Martes, Jueves</p>
                 <p>Horario: 19:00 - 21:00</p>
                 <p>Profesor: Prof. María López</p>
-                <p>Valor de la matrícula de inscripción: Xxxxxxxx $</p>
-                <p>Valor de las cuotas mensuales: Xxxxxxx $</p>
-                <button>Quiero matricularme</button>
+                <p>Valor de la matrícula de inscripción: 1000 $</p>
+                <p>Valor de las cuotas mensuales: 2250 $</p>
+                <button class="btn btn-primary add-to-cart">Quiero matricularme</button>
             </div>
-            <div class="course">
+            <div class="course" data-course="Kickboxing" data-price="12000">
                 <h2>Kickboxing:</h2>
                 <p>Duración del curso completo: 4 meses</p>
                 <p>Días: Lunes, Miércoles</p>
                 <p>Horario: 20:00 - 22:00</p>
                 <p>Profesor: Prof. Carlos Rodríguez</p>
-                <p>Valor de la matrícula de inscripción: Xxxxxxxx $</p>
-                <p>Valor de las cuotas mensuales: Xxxxxxx $</p>
-                <button>Quiero matricularme</button>
+                <p>Valor de la matrícula de inscripción: 2000 $</p>
+                <p>Valor de las cuotas mensuales: 2500 $</p>
+                <button class="btn btn-primary add-to-cart">Quiero matricularme</button>
             </div>
-            <div class="course">
+            <div class="course" data-course="Judo" data-price="14000">
                 <h2>Judo:</h2>
                 <p>Duración del curso completo: 4 meses</p>
                 <p>Días: Miércoles y Viernes</p>
                 <p>Horario: 15:00 - 17:00</p>
                 <p>Profesor: Prof. Paula Pareto</p>
-                <p>Valor de la matrícula de inscripción: Xxxxxxxx $</p>
-                <p>Valor de las cuotas mensuales: Xxxxxxx $</p>
-                <button>Quiero matricularme</button>
+                <p>Valor de la matrícula de inscripción: 2000 $</p>
+                <p>Valor de las cuotas mensuales: 3000 $</p>
+                <button class="btn btn-primary add-to-cart">Quiero matricularme</button>
             </div>
-            <div class="course full-width">
+            <div class="course full-width" data-course="Karate" data-price="15000">
                 <h2>Karate:</h2>
                 <p>Duración del curso completo: 4 meses</p>
                 <p>Días: Martes y Jueves</p>
                 <p>Horario: 16:00 - 18:00</p>
                 <p>Profesor: Prof. Julián Pinzas</p>
-                <p>Valor de la matrícula de inscripción: Xxxxxxxx $</p>
-                <p>Valor de las cuotas mensuales: Xxxxxxx $</p>
-                <button>Quiero matricularme</button>
+                <p>Valor de la matrícula de inscripción: 2000 $</p>
+                <p>Valor de las cuotas mensuales: 3250 $</p>
+                <button class="btn btn-primary add-to-cart">Quiero matricularme</button>
             </div>
+        </div>
+
+        <div id="cart" class="mt-5">
+            <h2>Carrito de Compras</h2>
+            <ul id="cart-items" class="list-group"></ul>
+            <p id="total-price" class="mt-3">Total: $0</p>
+            <button id="confirm-purchase" class="btn btn-success mt-3">Confirmar Compra</button>
+            <p id="confirmation-message" class="mt-3" style="display: none;">Compra confirmada. ¡Gracias por su compra!</p>
         </div>
     </main>
 
@@ -83,9 +86,12 @@
     </footer>
 
 
-
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.6.0/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script src="../footer_header/footer_header.js"></script>
     <script src="../MenuResponsivo.js"></script>
+    <script src="Carrito.js"></script>
 </body>
 
 </html>
